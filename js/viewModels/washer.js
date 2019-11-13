@@ -1,0 +1,1 @@
+"use strict";define(["appController","ojs/ojlistview"],function(o){return new function(){this.backToHome=function(){o.router.go("home")}}});

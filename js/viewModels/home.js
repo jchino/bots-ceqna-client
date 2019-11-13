@@ -1,0 +1,1 @@
+"use strict";define(["appController","ojs/ojknockout","ojs/ojlistview"],function(o){return new function(){this.goToFridge=function(){o.router.go("fridge")},this.goToWasher=function(){o.router.go("washer")}}});

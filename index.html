@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Oracle Digital Assistant デモ</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <meta name="viewport" content="viewport-fit=cover, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="css/images/favicon.ico">
+<!-- injector:theme -->
+<link rel="stylesheet" href="css/alta/7.2.0/web/alta.min.css" id="css" />
+<!-- endinjector -->
+    <link rel="stylesheet" href="css/app.css"/>
+  </head>
+  <body class="oj-web-applayout-body">
+    <div id="pageContent" class="oj-web-applayout-page">
+      <oj-bind-if test="[[configured()]]">
+        <header role="banner" class="oj-web-applayout-header">
+          <div class="demo-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+            <div class="oj-flex-bar-middle">
+              <h1 class="oj-web-applayout-header-title">東芝ライフスタイル株式会社</h1>
+            </div>
+          </div>
+        </header>
+        <div class="oj-web-applayout-content-nopad">
+          <div style="background-color:#1f607c;color:#fff;">
+            <div class="oj-web-applayout-content oj-flex oj-flex-items-pad demo-web-applayout-max-width">
+              <div class="oj-flex-item">
+                <h2 style="color:#fff;font-size:2rem">お客様サポート</h2>
+              </div>
+            </div>
+          </div>
+          <div class="oj-web-applayout-content demo-web-applayout-max-width">
+            <oj-module id="mainContent" config="[[moduleConfig]]"></oj-module>
+          </div>
+        </div>
+      </oj-bind-if>
+      <oj-bind-if test="[[!configured()]]">
+        <div class="oj-web-applayout-content oj-web-applayout-max-width">
+          <div class="oj-flex oj-sm-flex-direction-column oj-sm-margin-4x">
+            <div class="oj-flex-item oj-sm-12 oj-md-8 oj-lg-6 oj-panel oj-sm-padding-4x-horizontal"
+                style="margin-left:auto; margin-right:auto">
+              <h1 style="text-align:center;">Oracle Digital Assistant デモ</h1>
+              <oj-form-layout class="oj-sm-margin-4x-top">
+                <oj-input-text id="passcode" value="{{passcode}}" label-hint="パスコード"
+                    messages-custom="{{msgsCustom}}" class="oj-form-control-full-width">
+                </oj-input-text>
+                <oj-button class="oj-button-primary oj-button-lg" on-oj-action="[[verifyPasscode]]"
+                    style="width:100%;">送信</oj-button>
+              </oj-form-layout>
+            </div>
+          </div>
+        </div>
+      </oj-bind-if>
+    </div>
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      !function(e,t,n,r){
+        function s(){try{var e;if((e="string"==typeof this.response?JSON.parse(this.response):this.response).url){var n=t.getElementsByTagName("script")[0],r=t.createElement("script");r.async=!0,r.src=e.url,n.parentNode.insertBefore(r,n)}}catch(e){}}var o,p,a,i=[],c=[];e[n]={init:function(){o=arguments;var e={then:function(t){return c.push({type:"t",next:t}),e},catch:function(t){return c.push({type:"c",next:t}),e}};return e},on:function(){i.push(arguments)},render:function(){p=arguments},destroy:function(){a=arguments}},e.__onWebMessengerHostReady__=function(t){if(delete e.__onWebMessengerHostReady__,e[n]=t,o)for(var r=t.init.apply(t,o),s=0;s<c.length;s++){var u=c[s];r="t"===u.type?r.then(u.next):r.catch(u.next)}p&&t.render.apply(t,p),a&&t.destroy.apply(t,a);for(s=0;s<i.length;s++)t.on.apply(t,i[s])};var u=new XMLHttpRequest;u.addEventListener("load",s),u.open("GET",r+"/loader.json",!0),u.responseType="json",u.send()
+      }(window,document,"Bots", "https://jchino.github.io/bots-ceqna-client/bots-client-sdk");
+    </script>
+    <script type="text/javascript" src="js/bots.js"></script>
+  </body>
+</html>

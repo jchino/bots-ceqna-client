@@ -1,0 +1,27 @@
+<div class=" oj-flex oj-flex-items-pad">
+  <div class="oj-flex-item oj-sm-12 oj-md-margin-2x-vertical">
+    <a href="#" on-click="[[backToHome]]">お客様サポート</a> &gt; <span>洗濯機・衣類乾燥機に関するお問い合わせ</span>
+  </div>
+  <div class="oj-flex-item oj-sm-12">
+    <h3 style="font-size:1.5rem">洗濯機・衣類乾燥機に関するお問い合わせ</h3>
+  </div>
+  <div class="oj-flex-item oj-sm-12">
+    <oj-list-view>
+      <ul>
+        <!-- チャットボットで問合せ -->
+        <li onclick="loadChat(event, '洗濯機について質問したい')">
+          <div class="oj-flex-bar oj-sm-align-items-center">
+            <div class="oj-flex-bar-start oj-flex oj-sm-align-items-center">
+            </div>
+            <div class="oj-flex-bar-middle">
+              <div class="oj-flex-item" style="font-size:1.2rem">チャットでのお問い合わせ</div>
+            </div>
+            <div class="oj-flex-bar-end oj-flex oj-sm-align-items-center">
+              <div role="presentation" class="oj-flex-item oj-fwk-icon oj-listview-drill-icon"></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </oj-list-view>
+  </div>
+</div>
